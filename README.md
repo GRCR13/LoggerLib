@@ -23,3 +23,9 @@
 ```bash
 g++ -c -o logger.o logger.cpp
 ar rcs liblogger.a logger.o
+```
+### Динамическая библиотека (.so)
+```bash
+g++ -fPIC -c logger.cpp -o logger.o
+g++ -shared -o liblogger.so logger.o
+```

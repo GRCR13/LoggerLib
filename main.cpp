@@ -1,4 +1,5 @@
 #include <thread>
+#include <iostream>
 #include <vector>
 #include "lib/logger.h"
 using std::string;
@@ -34,6 +35,8 @@ int main(int argc, char* argv[]) {
             th.join();
         }
     }
+
+    std::cout << "Программа записала логи в файл " + filename + "\n";
 
     return 0;
 }

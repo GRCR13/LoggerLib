@@ -1,5 +1,4 @@
 #include <thread>
-#include <iostream>
 #include <vector>
 #include "lib/logger.h"
 using std::string;
@@ -18,15 +17,12 @@ int main(int argc, char* argv[]) {
     Logger logger(filename, lvl);
  
     std::vector<std::thread> threads;
-    string message;
-    
+
     for (int t = 0; t < 12; ++t) {
-        threads.emplace_back([&logger, lvl, &message ,t]() {
+        threads.emplace_back([&logger, lvl, t]() {
 
             for (int i = 0; i < 10; ++i) {
-                //Ожидать нового ввода от пользователя после передачи данных
-                std::cin >> message;
-                logger.Write(message, lvl);
+                logger.Write("Поток " + std::to_string(t) + " значение " + std::to_string(i), lvl);
             }
 
             });

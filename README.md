@@ -30,7 +30,9 @@ g++ -fPIC -c logger.cpp -o logger.o
 g++ -shared -o liblogger.so logger.o
 ```
 ### Cmake 
+```bash
 mkdir build
 cd build
 cmake ..
 make
+```

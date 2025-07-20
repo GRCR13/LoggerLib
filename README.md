@@ -29,3 +29,8 @@ ar rcs liblogger.a logger.o
 g++ -fPIC -c logger.cpp -o logger.o
 g++ -shared -o liblogger.so logger.o
 ```
+### Cmake 
+mkdir build
+cd build
+cmake ..
+make
